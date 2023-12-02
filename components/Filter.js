@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View } from '@rneui/themed';
-import SeasonSelectBox from './SeasonSelectBox';
-import YearSelectBox from './YearSelectBox';
+import { View } from 'react-native';
+import SeasonSelect from './SeasonSelect';
+import YearSelect from './YearSelect';
 
 const Filter = ({ onFilterChange }) => {
     const [selectedSeason , setSelectedSeason] = useState('spring');
     const [selectedYear , setSelectedYear] = useState(new Date().getFullYear());
 
-    const handleFilterChange = () => {
+    const HandleFilterChange = () => {
         onFilterChange({
             selectedSeason,
             selectedYear,
@@ -16,8 +16,8 @@ const Filter = ({ onFilterChange }) => {
 
     return (
         <View>
-            <SeasonSelectBox selectedSeason={selectedSeason} onSeasonChange={setSelectedSeason} />
-            <YearSelectBox selectedYear={selectedYear} onYearChange={setSelectedYear} />
+            <SeasonSelect selectedSeason={selectedSeason} onSeasonChange={setSelectedSeason} />
+            <YearSelect selectedYear={selectedYear} onYearChange={setSelectedYear} />
         </View>
     );
 };

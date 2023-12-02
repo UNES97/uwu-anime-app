@@ -2,15 +2,21 @@ import { View } from 'react-native';
 import Dropdown from 'react-native-input-select';
 
 const SeasonSelect = ({ selectedSeason , onSeasonChange }) => {
-    const seasons = ['spring', 'summer', 'autumn', 'winter'];
+    const seasons = [
+        { name: 'Spring', value: 'spring' },
+        { name: 'Summer', value: 'summer' },
+        { name: 'Autumn', value: 'autumn' },
+        { name: 'Winter', value: 'winter' },
+    ];
+
     return (
-        <View style={{ paddingHorizontal: 10,}}>
+        <View style={{ paddingHorizontal: 15,}}>
             <Dropdown
                 label="Season"
                 placeholder="Select a season..."
                 options={seasons}
-                /* optionLabel={'name'}
-                optionValue={'code'} */
+                optionLabel={'name'}
+                optionValue={'value'}
                 selectedValue={selectedSeason}
                 onValueChange={(itemValue) => onSeasonChange(itemValue)}
             >

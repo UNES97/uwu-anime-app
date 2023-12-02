@@ -11,7 +11,7 @@ function Home({ navigation }) {
     const { year , season } = getCurrentYearAndSeason();
     return (
         <View>
-            <Text>Welcome</Text>
+            <Text style={{ fontWeight: 'bold' , fontSize: 20 , marginVertical: 20 , textAlign: 'center' }}>Find Anime by Year & Season</Text>
             <Filter onFilterChange={handleFilterChange} />
         </View>
     );
